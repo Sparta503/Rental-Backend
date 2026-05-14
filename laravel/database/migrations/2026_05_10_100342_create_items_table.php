@@ -13,6 +13,23 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('user_id')
+                  ->constrained()
+                  ->onDelete('cascade');
+
+            $table->string('title');
+
+            $table->text('description');
+
+            $table->decimal('price_per_day', 10, 2);
+
+            $table->string('category');
+
+            $table->string('location');
+
+            $table->boolean('is_available')->default(true);
+
             $table->timestamps();
         });
     }
