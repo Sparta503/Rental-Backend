@@ -1,3 +1,11 @@
+<?php
+
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ItemController;
+use App\Http\Controllers\Api\BookingController;
+use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\AdminController;
+
 // Public routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
